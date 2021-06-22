@@ -20,7 +20,7 @@
             <div class="container">
                 <%- include('../partials/flash') %>
                     <h1 class="text-center">All Campgrounds</h1>
-                    <a href="http://localhost:3000/campgrounds/new" class="btn btn-sm btn-success mb-3">Add</a>
+                    <a href="/campgrounds/new" class="btn btn-sm btn-success mb-3">Add</a>
                     <ul>
                         <% for (let campground of campgrounds) { %>
 
@@ -38,7 +38,7 @@
                                     <div class="col-md-8">
                                         <div class="card-body">
                                             <h5 class="cart-title">
-                                                <a href="http://localhost:3000/campgrounds/<%= campground._id %>"
+                                                <a href="/campgrounds/<%= campground._id %>"
                                                     class="text-decoration-none">
                                                     <%= campground.title %>
                                                 </a>
@@ -51,7 +51,7 @@
                                                     <%= campground.location %>
                                                 </small>
                                             </p>
-                                            <a href="http://localhost:3000/campgrounds/<%= campground._id %>"
+                                            <a href="/campgrounds/<%= campground._id %>"
                                                 class="btn btn-primary">View</a>
                                         </div>
 

@@ -6,7 +6,7 @@
                     alt="Login YelpCamp" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title">Create new campground</h5>
-                    <form method="POST" action="http://localhost:3000/campgrounds" class="needs-validation"
+                    <form method="POST" action="/campgrounds" class="needs-validation"
                         enctype="multipart/form-data" novalidate>
                         <!-- base on input[name] we will get object campground{title:..., price:...,...} parse to req.body =>req.body.campground -->
                         <div class="form-group mb-3">
@@ -48,7 +48,7 @@
                         <div class="my-3">
                             <div class="d-grid gap-2">
                                 <button class="btn btn-primary">Submit</button>
-                                <a href="http://localhost:3000/campgrounds" class="btn btn-secondary">Cancel</a>
+                                <a href="/campgrounds" class="btn btn-secondary">Cancel</a>
                             </div>
                         </div>
                     </form>
