@@ -1,0 +1,65 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card shadow mb-3">
+                <img src="https://images.unsplash.com/photo-1464207687429-7505649dae38?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80"
+                    alt="Login YelpCamp" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Create new campground</h5>
+                    <form method="POST" action="http://localhost:3000/campgrounds" class="needs-validation"
+                        enctype="multipart/form-data" novalidate>
+                        <!-- base on input[name] we will get object campground{title:..., price:...,...} parse to req.body =>req.body.campground -->
+                        <div class="form-group mb-3">
+                            <label for="title" aria-label="Title">Title</label>
+                            <input type="text" id="title" name="campground[title]" class="form-control"
+                                placeholder="camp" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="location" aria-label="Location">Location</label>
+                            <input type="text" id="location" name="campground[location]" class="form-control"
+                                placeholder="city" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="price" aria-label="Price">Price</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">$</span>
+                                <input type="number" step="0.01" id="price" name="campground[price]"
+                                    class="form-control" placeholder="0.00" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Upload Images</label>
+                            <input type="file" name="image" id="image" class="form-control" multiple required>
+                        </div>
+                        <div class="form-group">
+                            <label for="description" class="form-label" aria-label="Description">Description</label>
+                            <textarea id="description" name="campground[description]" class="form-control"
+                                required></textarea>
+                        </div>
+                        <div class="my-3">
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-primary">Submit</button>
+                                <a href="http://localhost:3000/campgrounds" class="btn btn-secondary">Cancel</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- https://getbootstrap.com/docs/4.5/components/forms/#validation -->
+    <!-- <form novalidate class="needs-validation"></form> -->
+
+    <!-- <input required>
+    <div class="valid-feedback">
+        Looks good!
+      </div> -->

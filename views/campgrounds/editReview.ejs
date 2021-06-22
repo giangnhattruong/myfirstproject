@@ -1,0 +1,55 @@
+<% layout('layouts/boilerplate') %>
+    <link rel="stylesheet" href="/css/starability-basic.css">
+
+    <div class="row">
+        <div class="col-md-6 offset-3 col-xl-4 offset-xl-4">
+            <div class="card shadow mb-3">
+                <img src="https://images.unsplash.com/photo-1600967499288-2006e06b263a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+                    alt="Login YelpCamp" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Edit <%= campground.name %> Review</h5>
+                    <form method="POST"
+                        action="/campgrounds/<%= campground._id %>/reviews/<%= review._id %>?_method=PUT"
+                        class="mb-3 needs-validation rating" novalidate>
+                        <div class="mb-3">
+                            <fieldset class="starability-basic">
+                                <legend class="fs-5">Rating:</legend>
+                                <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="0"
+                                    checked aria-label="No rating." />
+
+                                <input type="radio" id="rate1" name="review[rating]" value="1" />
+                                <label for="rate1">1 star.</label>
+
+                                <input type="radio" id="rate2" name="review[rating]" value="2" />
+                                <label for="rate2">2 stars.</label>
+
+                                <input type="radio" id="rate3" name="review[rating]" value="3" />
+                                <label for="rate3">3 stars.</label>
+
+                                <input type="radio" id="rate4" name="review[rating]" value="4" />
+                                <label for="rate4">4 stars.</label>
+
+                                <input type="radio" id="rate5" name="review[rating]" value="5" />
+                                <label for="rate5">5 stars.</label>
+
+                                <span class="starability-focus-ring"></span>
+                            </fieldset>
+                        </div>
+                        <div class="form_group mb-3">
+                            <label class="form-label fs-5" for="body">Review</label>
+                            <textarea class="form-control" name="review[body]" id="body" cols="30" rows="3"
+                                required><%= review.body %></textarea>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <a href="/campgrounds/<%= campground._id %>" class="btn btn-secondary">Cancel</a>
+                            <button class="btn btn-success">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/preventNoRating.js"></script>
